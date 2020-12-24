@@ -19,18 +19,23 @@ class ListaCavaleiros extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    _cavaleiros.add(Cavaleiro('Cavaleiro 1', 1));
+    _cavaleiros.add(Cavaleiro('Cavaleiro 2', 2));
+    _cavaleiros.add(Cavaleiro('Cavaleiro 3', 3));
+    _cavaleiros.add(Cavaleiro('Cavaleiro 4', 4));
+
     return Scaffold(
       appBar: AppBar(
         title: Text('Cavaleiros'),
         backgroundColor: Colors.amber,
       ),
-      body: ListView(
-        children: [
-          ItemCavaleiro(
-            icone: Icons.supervised_user_circle,
-            cavaleiro: Cavaleiro('Cavaleiro 1', 1),
-          ),
-        ],
+      body: ListView.builder(
+        itemCount: _cavaleiros.length,
+        itemBuilder: (context, indice) {
+          final cavaleiro = _cavaleiros[indice];
+          return ItemCavaleiro(cavaleiro: cavaleiro);
+        },
       ),
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.amber,
