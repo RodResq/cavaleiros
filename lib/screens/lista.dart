@@ -92,8 +92,28 @@ class ItemCavaleiro extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    debugPrint('$cavaleiro');
+    _addAvatar();
+    return GestureDetector(
+      onTap: () {
+        Navigator.push(context, MaterialPageRoute(builder: (context) {
+          return FormularioCavaleiro();
+        }));
+      },
+      child: Card(
+        child: ListTile(
+          leading: CircleAvatar(
+            backgroundImage: NetworkImage(avatar),
+          ),
+          title: Text(cavaleiro.nome),
+          subtitle: Text("Casa " + cavaleiro.numeroCasa.toString() +
+              " Armadura de " +
+              cavaleiro.armadura.toString()),
+        ),
+      ),
+    );
+  }
 
+  void _addAvatar() {
     switch (cavaleiro.nome) {
       case "aiolos":
         avatar = _aiolos;
@@ -132,17 +152,5 @@ class ItemCavaleiro extends StatelessWidget {
         avatar = _aiolia;
         break;
     }
-
-    return Card(
-      child: ListTile(
-        leading: CircleAvatar(
-          backgroundImage: NetworkImage(avatar),
-        ),
-        title: Text(cavaleiro.nome),
-        subtitle: Text("Casa " + cavaleiro.numeroCasa.toString() +
-            " Armadura de " +
-            cavaleiro.armadura.toString()),
-      ),
-    );
   }
 }
