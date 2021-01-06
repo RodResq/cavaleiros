@@ -97,7 +97,7 @@ class ItemCavaleiro extends StatelessWidget {
     return GestureDetector(
       onTap: () {
         Navigator.push(context, MaterialPageRoute(builder: (context) {
-          return DetalheCavaleiro();
+          return DetalheCavaleiro(cavaleiro);
         }));
       },
       child: Card(
