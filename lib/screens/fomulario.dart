@@ -11,6 +11,9 @@ const _labelCampoCasa = 'Casa do Cavaleiro';
 const _dicaCampoCasa = 'Ex: 1 de 12';
 const _textoBotaoConfirmar = 'Confirmar';
 
+const _labelCampoArmadura = "Armadura do Cavaleiro";
+const _dicaCampoArmadura = "Entre com o nome da Armadura";
+
 class FormularioCavaleiro extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
@@ -21,6 +24,7 @@ class FormularioCavaleiro extends StatefulWidget {
 class FormularioCavaleiroState extends State<FormularioCavaleiro> {
   final TextEditingController _controladorNome = TextEditingController();
   final TextEditingController _controladorCasa = TextEditingController();
+  final TextEditingController _controladorArmadura = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -42,6 +46,12 @@ class FormularioCavaleiroState extends State<FormularioCavaleiro> {
                 dica: _dicaCampoCasa,
                 tipoTeclado: TextInputType.number,
             ),
+            EditorCavaleiro(
+              controlador: _controladorArmadura,
+              rotulo: _labelCampoArmadura,
+              dica: _dicaCampoArmadura,
+              tipoTeclado: TextInputType.number,
+            ),
             RaisedButton(
               child: Text(_textoBotaoConfirmar),
               onPressed: () => _criaCavaleiro(context),
@@ -55,9 +65,10 @@ class FormularioCavaleiroState extends State<FormularioCavaleiro> {
   void _criaCavaleiro(BuildContext context) {
     final String nome = _controladorNome.text;
     final int casa = int.tryParse(_controladorCasa.text);
+    final String armadura = _controladorArmadura.text;
 
     if (nome != null && casa != null) {
-      final Cavaleiro cavaleiroCriado = Cavaleiro(nome, casa);
+      final Cavaleiro cavaleiroCriado = Cavaleiro(nome, casa, armadura);
       Navigator.pop(context, cavaleiroCriado);
     }
   }
