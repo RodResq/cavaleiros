@@ -1,4 +1,5 @@
 import 'package:cavaleiros/models/cavaleiro.dart';
+import 'package:cavaleiros/screens/detalhe.dart';
 import 'package:cavaleiros/screens/fomulario.dart';
 import 'package:flutter/material.dart';
 
@@ -96,7 +97,7 @@ class ItemCavaleiro extends StatelessWidget {
     return GestureDetector(
       onTap: () {
         Navigator.push(context, MaterialPageRoute(builder: (context) {
-          return FormularioCavaleiro();
+          return DetalheCavaleiro();
         }));
       },
       child: Card(
