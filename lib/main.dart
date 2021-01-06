@@ -13,17 +13,19 @@ class CavaleirosApp extends StatelessWidget {
   }
 }
 
-class ListaCavaleiros extends StatelessWidget {
+class ListaCavaleiros extends StatefulWidget {
 
   final List<Cavaleiro> _cavaleiros = List();
 
   @override
-  Widget build(BuildContext context) {
+  State<StatefulWidget> createState() {
+    return ListaCavaleirosState();
+  }
+}
 
-    _cavaleiros.add(Cavaleiro('Cavaleiro 1', 1));
-    _cavaleiros.add(Cavaleiro('Cavaleiro 2', 2));
-    _cavaleiros.add(Cavaleiro('Cavaleiro 3', 3));
-    _cavaleiros.add(Cavaleiro('Cavaleiro 4', 4));
+class ListaCavaleirosState extends State<ListaCavaleiros> {
+  @override
+  Widget build(BuildContext context) {
 
     return Scaffold(
       appBar: AppBar(
@@ -31,9 +33,9 @@ class ListaCavaleiros extends StatelessWidget {
         backgroundColor: Colors.amber,
       ),
       body: ListView.builder(
-        itemCount: _cavaleiros.length,
+        itemCount: widget._cavaleiros.length,
         itemBuilder: (context, indice) {
-          final cavaleiro = _cavaleiros[indice];
+          final cavaleiro = widget._cavaleiros[indice];
           return ItemCavaleiro(cavaleiro: cavaleiro);
         },
       ),
@@ -42,18 +44,21 @@ class ListaCavaleiros extends StatelessWidget {
         child: Icon(Icons.add),
         onPressed: () {
           final Future<Cavaleiro> future =
-              Navigator.push(context, MaterialPageRoute(builder: (context) {
+          Navigator.push(context, MaterialPageRoute(builder: (context) {
             return FormularioCavaleiro();
           }));
           future.then((cavaleiroRecebido)  {
-            debugPrint('chegou no then do future');
+            debugPrint('Entrou no then do future');
             debugPrint('$cavaleiroRecebido');
-            _cavaleiros.add(cavaleiroRecebido);
+            setState(() {
+              widget._cavaleiros.add(cavaleiroRecebido);
+            });
           });
         },
       ),
     );
   }
+
 }
 
 class Cavaleiro {
@@ -126,6 +131,7 @@ class FormularioCavaleiro extends StatelessWidget {
     if (nome != null && casa != null) {
       final Cavaleiro cavaleiroCriado = Cavaleiro(nome, casa);
       debugPrint('Criando cavaleiro');
+      debugPrint('$cavaleiroCriado');
       Navigator.pop(context, cavaleiroCriado);
     }
   }
