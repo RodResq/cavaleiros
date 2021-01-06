@@ -4,11 +4,13 @@ class EditorCavaleiro extends StatelessWidget {
   final TextEditingController controlador;
   final String rotulo;
   final String dica;
+  final TextInputType tipoTeclado;
 
   EditorCavaleiro({
     this.controlador,
     this.rotulo,
     this.dica,
+    this.tipoTeclado,
   });
 
   @override
@@ -18,6 +20,7 @@ class EditorCavaleiro extends StatelessWidget {
       child: TextField(
         controller: controlador,
         decoration: InputDecoration(labelText: rotulo, hintText: dica),
+        keyboardType: tipoTeclado,
       ),
     );
   }

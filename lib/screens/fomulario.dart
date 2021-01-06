@@ -39,7 +39,9 @@ class FormularioCavaleiroState extends State<FormularioCavaleiro> {
             EditorCavaleiro(
                 controlador: _controladorCasa,
                 rotulo: _labelCampoCasa,
-                dica: _dicaCampoCasa),
+                dica: _dicaCampoCasa,
+                tipoTeclado: TextInputType.number,
+            ),
             RaisedButton(
               child: Text(_textoBotaoConfirmar),
               onPressed: () => _criaCavaleiro(context),
