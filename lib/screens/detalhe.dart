@@ -25,14 +25,13 @@ class ItemDetalheCavaleiro extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    debugPrint('$itemCavaleiro');
     return Center(
       child: Card(
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.all(Radius.circular(8.0))),
         child: Align(
           alignment: Alignment.topCenter,
-          child: ImagemDetalhe(),
+          child: ImagemDetalhe(itemCavaleiro.nome),
         ),
       ),
     );
