@@ -1,4 +1,5 @@
 import 'package:cavaleiros/components/imagem_detalhe.dart';
+import 'package:cavaleiros/components/info-cavaleiro.dart';
 import 'package:cavaleiros/models/cavaleiro.dart';
 import 'package:flutter/material.dart';
 
@@ -31,7 +32,12 @@ class ItemDetalheCavaleiro extends StatelessWidget {
             borderRadius: BorderRadius.all(Radius.circular(8.0))),
         child: Align(
           alignment: Alignment.topCenter,
-          child: ImagemDetalhe(itemCavaleiro.nome),
+          child: Column(
+            children: [
+              ImagemDetalhe(itemCavaleiro.nome),
+              InfoCavaleiro()
+            ],
+          ),
         ),
       ),
     );
