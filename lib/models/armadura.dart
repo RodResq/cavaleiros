@@ -1,0 +1,3 @@
+ class Armadura {
+   String nome;
+ }

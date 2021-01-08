@@ -1,6 +1,7 @@
 import 'package:cavaleiros/models/cavaleiro.dart';
 import 'package:cavaleiros/screens/detalhe.dart';
 import 'package:cavaleiros/screens/fomulario.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 const _aiolos =
