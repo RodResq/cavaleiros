@@ -32,15 +32,14 @@ class ItemDetalheCavaleiro extends StatelessWidget {
             borderRadius: BorderRadius.all(Radius.circular(8.0))),
         child: Align(
           alignment: Alignment.topCenter,
-          child: ListView(
-            children: [
+          child: SingleChildScrollView(
+            child:
               Column(
                 children: [
                   ImagemDetalhe(itemCavaleiro.nome),
                   InfoCavaleiro()
                 ],
               ),
-            ],
           ),
         ),
       ),
