@@ -33,13 +33,15 @@ class ItemDetalheCavaleiro extends StatelessWidget {
         child: Align(
           alignment: Alignment.topCenter,
           child: SingleChildScrollView(
-            child:
-              Column(
-                children: [
-                  ImagemDetalhe(itemCavaleiro.nome),
-                  InfoCavaleiro()
-                ],
-              ),
+            child: Column(
+              children: [
+                ImagemDetalhe(itemCavaleiro.nome),
+                Padding(
+                  padding: EdgeInsets.all(8),
+                  child: InfoCavaleiro(),
+                )
+              ],
+            ),
           ),
         ),
       ),

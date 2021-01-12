@@ -5,40 +5,29 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 const _aiolos =
-    "https://lh6.googleusercontent.com/a1Yf4-9UrpLfQVWk474rRrSey6WPxFnocKMwTaHmpBNOTnEcg4dpJZKGDj01nO9YMdlj0V6AG64FPSMofy7bw-4VgbMqmg0eDGlcuC01gnnb03P0gVSb6UK7ZFNfBHILUVJ0amLTVQ";
-
+    'images/list/aiolos.png';
 const _saga =
-    "https://lh3.googleusercontent.com/5Snr8Sda-T8y6HLtimXtktI8N7ZT8gPwlbqsS_pcaOFPeAXapV6c-Adfo7fhkmZdfn19qK4XQD9vkmwOHR80O6B1KFas5nAsBuJrlWq9_QV1-qlAkXHLXNtEcDYXCHz0OZ_wAHJcuw";
-
+    'images/list/saga.png';
 const _milo =
-    "https://lh5.googleusercontent.com/sKidQM7K6GmUF4fmZR0JvGeYWqJcpg8FS8d3J8NSwx_uhzYf_YAOQrWwN2ps9IsWEBImixkDhvp7KMXX7rf2zkkUi6npbYV9Nxam19eX5Fq38nvxlkoDHglsoLRbKVEDWb_3Hgxe8Q";
-
+    'images/list/milo.png';
 const _aldebaran =
-    "https://lh5.googleusercontent.com/ltfaPQU1MYErAaw3JKGwpnt0Hl7FTsGmSIrXY6RJ2XIdmUYb7bgu8FkIgyaV2tKBDzO_RhjwEkKd5N1SnYG6J6rBkJ9Ilwb5c_LaWS5ura4fq3n3JEpgMfzGpYqbeP5mMr7fBpaZlQ";
-
+    'images/list/aldebaran.png';
 const _shaka =
-    "https://lh3.googleusercontent.com/NMSC3J8ADtIflzjJGr68yeLAwEYuJiy8XkvfWpQo2MUBIGqQFf-Ldb1HkxjB14ZcuIuuAzARLYmPr_tbh8IiRSm5ZinU5HFAWgK4pKZyr-gSVaZAljiavTcVmCz2DUDw7AOmWADZ8g";
-
+    'images/list/shaka.png';
 const _shura =
-    "https://lh5.googleusercontent.com/ON0MengxHOtIIpCYllr0nfZuSRHBUHAteHgyJ-KOu0DbN93w84dR7tdPTdYUnTJKkwCN5lAXB-jvl9U_6QbtvbsQvPspcsoK3iEstmHTcRxYfU8lnY2yewmcmax4nhriTCTj0mUfZw";
-
+    'images/list/shura.png';
 const _aphrodite =
-    "https://lh6.googleusercontent.com/JUJQtlIbyVC8lhpBXFGN7eGmopYF8-a69dtmafF2xuDCmqzOmiYOEVrg4Q6nDupkGrFbwgCzwraDAt3R8-468boww7baICa1lTqHATekD1qR1arjgLL1b47I24vqxuhg76GFf3KJWA";
-
+    'images/list/aphrodite.png';
 const _mu =
-    "https://lh4.googleusercontent.com/TO6EYgN67tg_DdBZZnVb3rG1HxvZG6vAY503xp1LXTpAHfAY3WF9BS_SK28m4khPkRkETRS9Q9tBGrRZ8spRXcMwtUPQ2KdmneZYT_B5aCeIPVZAP22C2FAk0WByIJgMrnkElm1ZqQ";
-
+    'images/list/mu.png';
 const _kamus =
-    "https://lh5.googleusercontent.com/GAqfMKdz5IXcmadEQ-gb7UQManQK4C7kCSPaQPE5DGIHDF4pd2rfRk41qzByN24_vAKjY8tbceEInYtpS62zw3Onr8bXNTjWEODipCOdY81OxbwdiVaV9SrGytuhon73N5hmaz-Xxw";
-
+    'images/list/kumus.png';
 const _dohko =
-    "https://www.cavzodiaco.com.br/imagens-personagens/imagem1/41.png";
-
+    'images/list/dohko.png';
 const _mascara_da_morte =
-    "https://www.cavzodiaco.com.br/imagens-personagens/imagem1/38.png";
-
+    'images/list/mascara_da_morte.png';
 const _aiolia =
-    "https://www.cavzodiaco.com.br/imagens-personagens/imagem1/39.png";
+    'images/list/aiolia.png';
 
 class ListaCavaleiros extends StatefulWidget {
   final List<Cavaleiro> _cavaleiros = List();
@@ -104,7 +93,7 @@ class ItemCavaleiro extends StatelessWidget {
       child: Card(
         child: ListTile(
           leading: CircleAvatar(
-            backgroundImage: NetworkImage(avatar),
+            backgroundImage: AssetImage(avatar),
           ),
           title: Text(cavaleiro.nome),
           subtitle: Text("Casa " + cavaleiro.numeroCasa.toString() +
